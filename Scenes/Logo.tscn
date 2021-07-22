@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ASSETS/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_size = 2
+outline_color = Color( 0, 0.996078, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "galaw"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 531, 0 ), Vector2( 505.638, 2.66968 ), Vector2( 531, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Logo" type="Label" parent="."]
+anchor_left = 0.398
+anchor_right = 0.605
+anchor_bottom = 0.104
+margin_left = 523.51
+margin_top = 0.78839
+margin_right = 781.51
+margin_bottom = 55.7884
+rect_scale = Vector2( 1.05906, 1.05906 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0627451, 0.329412, 0.435294, 1 )
+custom_colors/font_outline_modulate = Color( 0.988235, 0.968627, 0.968627, 1 )
+text = "JUMP JUMP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
+autoplay = "galaw"
+anims/galaw = SubResource( 2 )

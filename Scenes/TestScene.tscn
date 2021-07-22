@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/SAVE.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SAVE" type="Button" parent="."]
+margin_left = 580.757
+margin_top = 297.081
+margin_right = 748.757
+margin_bottom = 337.081
+text = "ENTER"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+inputsave = NodePath("../INPUTSAVE")
+yoursave = NodePath("../YOURSAVE")
+
+[node name="INPUTSAVE" type="LineEdit" parent="."]
+margin_left = 449.783
+margin_top = 218.054
+margin_right = 745.783
+margin_bottom = 242.054
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 1, 0.960784, 0, 1 )
+max_length = 13
+context_menu_enabled = false
+placeholder_text = "TYPE YOUR NAME HERE"
+placeholder_alpha = 0.624
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YOURSAVE" type="TextEdit" parent="."]
+margin_left = 189.942
+margin_top = -138.491
+margin_right = 413.942
+margin_bottom = -118.491
+rect_scale = Vector2( 2, 2 )
+readonly = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="SAVE" to="SAVE" method="_on_SAVE_pressed"]
